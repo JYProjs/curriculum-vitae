@@ -1,0 +1,326 @@
+%-------------------------
+% CV in Latex
+% Author : James Yu
+% Based off of: https://github.com/jakegut/resume and https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+\usepackage{CormorantGaramond}
+
+
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{.75in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+%-------------------------
+
+% Heading
+\newcommand{\cvProjectSubheading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Subheading with SubSubheading
+\newcommand{\cvSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Subheading without SubSubheading
+\newcommand{\cvSingleSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Research Subheading
+\newcommand{\cvResearchSubheading}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 \\
+      \small #4 & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Additional SubSubheading
+\newcommand{\cvSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Additional Research SubSubheading
+\newcommand{\cvResearchSubSubheading}[2]{
+    \vspace{-6pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+
+% line item/bullet point
+\newcommand{\cvItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+% SubItem
+\newcommand{\cvSubItem}[1]{\cvItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\cvSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\cvSubHeadingListEnd}{\end{itemize}}
+\newcommand{\cvItemListStart}{\begin{itemize}}
+\newcommand{\cvItemListEnd}{\vspace{-5pt}\end{itemize}}
+\newcommand{\cvPubListStart}{\begin{enumerate}[labelindent=0.15in, itemsep=0pt]}
+\newcommand{\cvPubListEnd}{\vspace{-5pt}\end{enumerate}}
+
+
+
+%-------------------------------------------
+%           CV STARTS HERE  
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape James Yu} \\ \vspace{1pt}
+    123 Main Street, City, State Zip
+
+    \small 123-346-7890 
+    $|$ \href{mailto:john.doe@x.edu}{\underline{\smash{john.doe@x.edu}}} 
+    $|$ \href{linkedin.com/in/james-yu-b8883491/}{\underline{\smash{LinkedIn}}} 
+    % $|$ \href{https://github.com/jyprojs}{\underline{\smash{GitHub}}}
+    \vspace{-15pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \cvSubHeadingListStart
+    \cvSubheading
+      {Case Western Reserve University School of Medicine}{Cleveland, OH}
+      {Doctor of Medicine -- expected}{July 2017 -- May 2022}
+    \cvSubheading
+      {John Hopkins University Whiting School of Engineering}{Baltimore, MD}
+      {Masters of Science in Computer Science -- expected}{Aug. 2020 -- May 2022}
+    \cvItemListStart
+        \cvItem{Relevant coursework: Applied Machine Learning, Neural Networks}
+    \cvItemListEnd
+    \cvSubheading
+      {University of California, Riverside}{Riverside, CA}
+      {Bachelor of Science in Biochemistry}{Aug. 2012 -- May 2015}
+      \cvItemListStart
+        \cvItem{Medical Sciences Emphasis}
+        \cvItem{graduated \textit{magna cum laude}}
+    \cvItemListEnd
+  \cvSubHeadingListEnd
+
+
+%------HONORS AND AWARDS--------
+\section{Honors and awards}
+\cvSubHeadingListStart
+    \cvSingleSubheading
+      {\textbf{Certificate of Completion}} {May 2020}{}{}
+        \cvItemListStart
+            \cvItem{Health Systems Science: Application to Patient Care Quality Improvement Charter and Reflective Blogs}
+            \cvItem{Top 10\% of reflective Blogs}
+        \cvItemListEnd
+    \cvSingleSubheading
+      {\textbf{Dr. Thomas Halsey Chancellor’s Scholarship/ Chancellor’s Scholarship}}{2012-2015}{}{}
+    \cvSingleSubheading
+      {\textbf{Chancellor’s Honor List}}{2012-2013, 2014-2015}{}{}
+\cvSubHeadingListEnd
+
+%--------WORK EXPERIENCE---------
+\section{Work Experience}
+  \cvSubHeadingListStart
+    \cvSubheading
+      {Emergency Medical Technician}{Gardena, CA}
+      {Ambuserve Ambulance Services}{Feb. 2016 -- May 2016}
+      \cvItemListStart
+        \cvItem{Gave and received patient care reports, documented patient encounters, and provided care to patients in route}
+      \cvItemListEnd
+  \cvSubHeadingListEnd
+
+%-------RESEARCH EXPERIENCE---------
+\section{Research Experience}
+  \cvSubHeadingListStart
+    \cvResearchSubheading
+      {UH Cleveland Medical Center, Division of Pediatric Orthopaedic Surgery}{Cleveland, OH}
+      {PI: Dr. R. Justin Mistovich}
+      {Project: Conservative treatment outcomes for post-operative seromas in pediatric scoliosis patients}{2018 -- 2019}
+      \cvItemListStart
+        \cvItem{Collected descriptive statistics on case series of post-operative seromas following posterior spinal fusion surgeries}
+        \cvItem{Conducted literature search on post-operative seromas after spinal surgery.}
+        \cvItem{Primary authorship of peer-reviewed publication and poster at national conference.}
+      \cvItemListEnd
+    \cvResearchSubSubheading
+      {Project: Long-term outcomes of growth-friendly implants in EOS patients following deep SSIs}{2018 -- present}
+      \cvItemListStart
+        \cvItem{Use of R and Excel for data analysis, tables and figures.}
+        \cvItem{Literature review, authorship and editing of manuscript.}
+        \cvItem{Culminated in podium presentation and manuscript submission}
+      \cvItemListEnd
+
+    \cvResearchSubheading
+      {Louis Stokes Cleveland VA Medical Center, Advanced Platform Technology}{Cleveland, OH}
+      {PI: Dr. Triolo Ph.D.}
+      {Project: Use of electrical stimulation to restore sensation in lower limb amputees}{2018 -- 2019}
+      \cvItemListStart
+        \cvItem{Advised in experimentation to study the relationship between electrical-stimulation-induced-sensations and EMG activity in lower limb muscles.}
+        \cvItem{Conducted literature search for study design.}
+        \cvItem{Authorship and editing of peer-reviewed publication and poster at a national conference.}
+      \cvItemListEnd
+    \cvResearchSubheading
+      {Medical College of Wisconsin, Department of Medicine}{Milwaukee, WI}
+      {PI: Jyoti Sengupta Ph.D. and Banani Banerjee Ph.D.}
+      {Project: Neuromolecular Mechanisms of Chronic Pelvic Pain in Neonatally-induced Cystitis}{2016 -- 2017}
+      \cvItemListStart
+        \cvItem{Survival surgeries: intrathecal catheterization and EMG electrodes implantation in SD rats}
+        \cvItem{Behavior studies: visceromotor response to colorectal distension and von Frey filament test in neonatally-induced cystitis models.}
+        \cvItem{Molecular experiments: analysis of microRNA and protein (mir92b, KCC2, VGAT) expression through RT- PCR and Western Blot repectively}
+        \cvItem{Use of Excel, CorelDraw, SigmaPlot, EndNote for figures, graphs, statistics and references.}
+        \cvItem{Contributed in authorship and editing of peer-reviewed publication.}
+      \cvItemListEnd
+  \cvSubHeadingListEnd
+
+
+
+%-----PEER-REVIEWED PUBLICATIONS-----
+\section{Peer-Reviewed Publications}
+  \cvPubListStart
+    \small{
+    \item Dumaine AM, \textbf{Yu J}, Poe-Kochert C, Thompson GH, Mistovich RJ. ``Surgical Site Infections in Early Onset Scoliosis What Are Long-term Outcomes and Predictors of Success?” Spinal Deformity \textit{ --- under Revision; April 2021 }
+
+    \item  \textbf{Yu J}, Dumaine AM, Poe-Kochert C, Thompson GH, Mistovich RJ. ``Seromas Following Pediatric Spinal Deformity Surgery: Is Operative Management Necessary?" J Pediatr Orthop. 2019 Dec 23. doi: 10.1097/BPO.0000000000001496. PubMed PMID: 31876697.
+    
+    \item Cheng K, Charkhkar H, \textbf{Yu J}, Makowski N, Triolo R. ``Probing peripheral neural pathways in electrically stimulation induced sensation," 2019 9th International IEEE/EMBS Conference on Neural Engineering (NER), San Francisco, CA, USA, 2019, pp. 453-456. Published on IEEE Xplore
+    
+    \item  Zhang J, \textbf{Yu J}, Kannampalli P, Nie L, Meng H, Medda B, Shaker R, Sengupta JN, Banerjee B. ``miRNAmediated downregulation of KCC2 and VGAT expression in spinal cord contributes to neonatal cystitis-induced visceral pain in rats.” Pain. 2017 Sep 1. doi: 10.1097/j.pain.0000000000001057. PMID: 28885452.
+    }
+  \cvPubListEnd
+    
+
+%-----POSTER & PODIUM PRESENTATIONS------
+\section{Poster \& Podium Presentations}
+  \cvPubListStart
+    \small{
+    \item Dumaine AM, \textbf{Yu J}, Poe-Kochert C, Thompson GH, Mistovich RJ. “Long Term Outcomes Following Surgical Site Infections in Early Onset Scoliosis Patients: A 15-year Retrospective Review.” American Academy of Pediatrics Virtual National Conference \& Exhibition. October 2020.
+    
+    \item  \textbf{Yu J}, Dumaine AM, Poe-Kochert C, Thompson GH, Mistovich RJ. “Seromas following Pediatric Spinal Deformity Surgery: Is Operative Management Necessary?” Mid-America Orthopaedic Association 38th Annual Meeting. April 2020.
+    
+    \item Zhang J, \textbf{Yu J}, Meng H, Kannampalli P, Medda B, Shaker R, Sengupta JN, Banerjee B. “MicroRNA-mediated downregulation of GABA-associated co-transporter and transporter in rats spinal dorsal horns with zymosan-induced cystitis” MCW Department of Medicine Retreat; Milwaukee, WI (2017).
+    }
+  \cvPubListEnd
+
+%-----------PROJECTS-----------
+% \section{Projects}
+%   \cvSubHeadingListStart
+%     \cvProjectSubheading
+%     {\textbf{Patentpy/Patentr} $|$ \emph{Python, TravisCI, codecov, Git}}{June 2020 -- Present}
+%       \cvItemListStart
+%         \cvItem{Developed a PyPI python package to convert bulk patent data from TXT and XML to csv/dataframe format from USPTO bulk patent website.}
+%         \cvItem{Utilized Pybind11 to wrap custom C++ code for parsing relevant fields from TXT formatted files.}
+%         \cvItem{Streamlined updates through use of CI tools, TravisCI and codecov, and pytest-cov for testing.}
+%         \cvItem{Wrote detailed documentation via Sphinx and hosted it on GitHub Pages.}
+%         \cvItem{Contributed to CRAN R package counterpart}
+%       \cvItemListEnd
+%   \cvSubHeadingListEnd
+
+
+%--------COMMUNITY SERVICE---------
+\section{Community Service}
+  \cvSubHeadingListStart
+    \cvSubheading
+    {Riverside Community Hospital}{Riverside, CA}
+    {Volunteer}{2014 -- 2015}
+      \cvItemListStart
+         \cvItem{Escorted patients and visitors throughout hospital; delivered mail, gifts, and flowers; and helped to discharge patients.}
+      \cvItemListEnd
+      
+    \cvSubheading{Medical Students Cultural Exchange}{New Taipei, Taiwan}{Teaching Assistant and Facilitator}{Summer 2015}
+      \cvItemListStart
+         \cvItem{Facilitated group discussions and helped coordinated summer camp activities with Taiwanese medical students.}
+         \cvItem{Gave presentation on Patient Protection and Affordable Care Act.}
+      \cvItemListEnd
+  \cvSubHeadingListEnd
+
+%-------------LANGUAGES----------------
+\section{Languages}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{English}{: Fluent} \\
+      \textbf{Mandarin}{: Proficient} \\
+    }}
+    \vspace{-3pt}
+  \end{itemize}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Programming Languages}{: Python, JavaScript, C++, HTML/CSS, R} \\
+      \textbf{Developer Tools}{: Git, Docker, TravisCI, VS Code} \\
+      \textbf{Libraries}{: pandas, NumPy, Matplotlib, seaborn, sklearn, pytest-cov, pybind11, Sphinx}
+    }}
+  \end{itemize}
+ 
+
+
+
+%-------------------------------------------
+\end{document}
